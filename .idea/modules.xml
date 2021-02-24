@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$USER_HOME$/Documents/django_projects/django_noticeboard/.idea/django_noticeboard.iml" filepath="$USER_HOME$/Documents/django_projects/django_noticeboard/.idea/django_noticeboard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/django_noticeboard_api.iml" filepath="$PROJECT_DIR$/.idea/django_noticeboard_api.iml" />
+    </modules>
+  </component>
+</project>

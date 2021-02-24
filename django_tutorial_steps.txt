@@ -1,0 +1,23 @@
+1. Create app
+	django-admin startproject project_name
+	cd project_name
+	django_admin startapp app_name
+	python manage.py migrate
+
+2. Define models, settings, admin page
+	define models
+	(optional) define human-readable names in model fields, add __str__ method
+	include 'project_name.apps.ProjectNameConfig' in settings.INSTALLED_APPS
+	change settings.TIME_ZONE to 'Europe/Madrid'
+	python manage.py makemigrations app_name
+	python manage.py migrate
+	python manage.py createsuperuser
+	enter admin, email, password
+	import and register models in admin.py
+
+3. Define views
+	add view functions or classes (e.g. generic) to views.py
+	create urls.py in app_name, include in project_name/urls.py
+	set app namespace -- include app_name variable in app_name/urls.py
+	add views to app_name/urls.py
+	create templates for each view

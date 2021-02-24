@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ object.username }}</h1>
+<p>Email: {{ object.email }}</p>
+
+<h2>Notices created by {{ object.username }}</h2>
+
+{% if notices %}
+<ul>
+    {% for n in notices %}
+    <li>
+        <a href={% url 'noticeboard:single-notice' pk=n.pk %}>{{ n.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>{{object.username}} has not created any notices yet</p>
+{% endif %}
+
+{% endblock %}

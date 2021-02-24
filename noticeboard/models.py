@@ -15,7 +15,7 @@ class Notice(models.Model):
     exp_date = models.DateTimeField('Expiration date')
     body = models.TextField(max_length=500)
     author = models.ForeignKey(
-        User, on_delete=models.SET_NULL, null=True, max_length=1)
+        User, on_delete=models.SET_NULL, null=True, max_length=1, related_name='notices')
     # hidden = models.BooleanField(default=False)
     # attachment = models.FileField(blank=True)
 

@@ -1,6 +1,8 @@
-from django.contrib import admin
 from django.urls import include, path
-from django.views.generic import RedirectView
+from rest_framework.routers import DefaultRouter
+
+from noticeboard.views import NoticeViewSet
+from users.views import UserViewSet
 
 """project_x URL Configuration
 
@@ -18,9 +20,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
+router = DefaultRouter()
+router.register(r'users', UserViewSet)
+router.register(r'notices', NoticeViewSet)
+
 urlpatterns = [
-    path('', RedirectView.as_view(pattern_name='noticeboard:active-notices'), name='home'),
-    path('accounts/', include('accounts.urls', namespace='accounts')),
-    path('noticeboard/', include('noticeboard.urls', namespace='noticeboard')),
-    path('admin/', admin.site.urls),
+    path('', include(router.urls)),
 ]

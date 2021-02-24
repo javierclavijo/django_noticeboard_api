@@ -1,4 +1,5 @@
 from django.urls import include, path
+from django.contrib import admin
 from rest_framework.routers import DefaultRouter
 
 from noticeboard.views import NoticeViewSet
@@ -26,4 +27,5 @@ router.register(r'notices', NoticeViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('admin/', admin.site.urls)
 ]
